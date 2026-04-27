@@ -20,15 +20,14 @@ public class ReportService {
     }
 
     public ReportResponse createReport(ReportRequest request) {
-
         Report report = new Report();
         report.setTitle(request.getTitle());
         report.setDescription(request.getDescription());
         report.setType(request.getType());
+        report.setCreatedBy(request.getCreatedBy());
         report.setCreatedAt(LocalDateTime.now());
 
         Report saved = reportRepository.save(report);
-
         return mapToResponse(saved);
     }
 
@@ -52,6 +51,7 @@ public class ReportService {
                 r.getTitle(),
                 r.getDescription(),
                 r.getType(),
+                r.getCreatedBy(),
                 r.getCreatedAt()
         );
     }

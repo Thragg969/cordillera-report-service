@@ -14,29 +14,56 @@ public class Report {
     private String title;
     private String description;
     private String type;
-
+    private String createdBy;
     private LocalDateTime createdAt;
 
     public Report() {}
 
-    public Report(Long id, String title, String description, String type, LocalDateTime createdAt) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.type = type;
-        this.createdAt = createdAt;
+    public Long getId() {
+        return id;
     }
 
-    // getters y setters
-    public Long getId() { return id; }
-    public String getTitle() { return title; }
-    public String getDescription() { return description; }
-    public String getType() { return type; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
+    public String getTitle() {
+        return title;
+    }
 
-    public void setId(Long id) { this.id = id; }
-    public void setTitle(String title) { this.title = title; }
-    public void setDescription(String description) { this.description = description; }
-    public void setType(String type) { this.type = type; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public String getDescription() {
+        return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }

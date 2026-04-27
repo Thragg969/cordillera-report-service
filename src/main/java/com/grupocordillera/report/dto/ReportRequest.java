@@ -12,12 +12,37 @@ public class ReportRequest {
     @NotBlank
     private String type;
 
-    // getters/setters
-    public String getTitle() { return title; }
-    public String getDescription() { return description; }
-    public String getType() { return type; }
+    private String createdBy;
 
-    public void setTitle(String title) { this.title = title; }
-    public void setDescription(String description) { this.description = description; }
-    public void setType(String type) { this.type = type; }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
 }
