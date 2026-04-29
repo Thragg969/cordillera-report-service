@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// IMPORTANTE
+import org.springframework.http.ResponseEntity;
+
 @RestController
 @RequestMapping("/api/reports")
 public class ReportController {
@@ -31,5 +34,17 @@ public class ReportController {
     @GetMapping("/{id}")
     public ReportResponse getById(@PathVariable Long id) {
         return reportService.getById(id);
+    }
+
+    // NUEVO ENDPOINT PDF
+    @GetMapping("/{id}/pdf")
+    public ResponseEntity<byte[]> downloadPdf(@PathVariable Long id) {
+
+        byte[] pdf = reportService.generatePdf(id);
+
+        return ResponseEntity.ok()
+                .header("Content-Disposition", "attachment; filename=reporte_" + id + ".pdf")
+                .header("Content-Type", "application/pdf")
+                .body(pdf);
     }
 }
